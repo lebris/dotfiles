@@ -1,0 +1,11 @@
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+
+alias ff=' "" > /tmp/git.diff ; git st ; git diff > /tmp/git.diff ; gedit /tmp/git.diff&'
+
+alias untar='tar -xvf'
+
+alias phpunit='vendor/bin/phpunit'
+
