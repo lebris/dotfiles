@@ -9,3 +9,6 @@ alias untar='tar -xvf'
 
 alias phpunit='vendor/bin/phpunit'
 
+# Force git langage
+export LANGUAGE='en_US.UTF-8 git'
+
