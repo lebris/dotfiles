@@ -1,11 +1,14 @@
+# tmux autostart
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
+
+alias lt='ls -lrta'
 alias ..='cd ..'
 alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-
-alias ff=' "" > /tmp/git.diff ; git st ; git diff > /tmp/git.diff ; gedit /tmp/git.diff&'
-
-alias untar='tar -xvf'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
 
 alias phpunit='vendor/bin/phpunit'
 
