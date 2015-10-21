@@ -12,6 +12,8 @@ alias ....='cd ../../../../'
 
 alias phpunit='vendor/bin/phpunit'
 
+export workspace=~/workspace
+
 # Force git langage
 export LANGUAGE='en_US.UTF-8 git'
 
