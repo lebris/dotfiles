@@ -1,0 +1,32 @@
+snippet cl "PSR0 class"
+<?php
+
+namespace ${3:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+
+class ${2:`!v expand('%:t:r', 'myClass')`}
+{
+    ${1}
+}
+endsnippet
+
+snippet icl "PSR0 interface"
+<?php
+
+namespace ${3:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+
+interface ${2:`!v expand('%:t:r', 'myInterface')`}
+{
+    ${1}
+}
+endsnippet
+
+snippet tcl "PSR0 trait"
+<?php
+
+namespace ${3:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+
+trait ${2:`!v expand('%:t:r', 'myTrait')`}
+{
+    ${1}
+}
+endsnippet
