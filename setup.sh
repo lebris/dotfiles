@@ -20,4 +20,9 @@ fi
 echo -e $yellow"Installing vim plugins"$RESTORE
 vim +PluginInstall +qall
 
+if [ -d $dotfilesDirectory/atom ]; then
+    echo -e $yellow"Installing atom snippets"$RESTORE
+    cp $dotfilesDirectory/atom/snippets.cson ~/.atom/snippets.cson # symlink with cygwin not supported :(
+fi
+
 echo -e "\nNow you have to run 'source ~/.bashrc'"
