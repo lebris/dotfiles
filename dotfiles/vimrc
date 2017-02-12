@@ -133,8 +133,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'UltiSnips'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'UltiSnips'
 Plugin 'The-NERD-tree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
