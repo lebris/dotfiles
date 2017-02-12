@@ -138,10 +138,18 @@ Plugin 'UltiSnips'
 Plugin 'The-NERD-tree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+"Bundle 'powerline/powerline'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " Vundle required
 filetype plugin indent on    " Vundle required
 
+" powerline configuration
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+let g:Powerline_symbols = 'fancy'
+set t_Co=256
+set laststatus=2
+set showtabline=2
 
 "
 " UltiSnips

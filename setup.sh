@@ -17,6 +17,15 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
+if [ -d $dotfilesDirectory/config ]; then
+    files=`ls -1 $dotfilesDirectory/config`
+
+    for file in $files; do
+        echo -e $yellow"Creating symlink for ~/.config/$file"$RESTORE
+        ln -s $dotfilesDirectory/config/$file ~/.config/$file
+    done
+fi
+
 echo -e $yellow"Installing vim plugins"$RESTORE
 vim +PluginInstall +qall
 
