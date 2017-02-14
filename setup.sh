@@ -7,8 +7,14 @@ yellow='\e[00;33m'
 
 files=`ls -1 $dotfilesDirectory/dotfiles`
 for file in $files; do
-    echo -e $yellow"Creating symlink for $file"$RESTORE
-    ln -sf $dotfilesDirectory/dotfiles/$file ~/.$file
+    SOURCE=$dotfilesDirectory/dotfiles/$file
+    DESTINATION=~/.$file
+    if [ ! -L ${DESTINATION} ]; then
+        echo -e $yellow"Creating symlink for $file"$RESTORE
+        ln -sf ${SOURCE} ${DESTINATION}
+    else
+        echo -e $yellow"Creating symlink for $file : already existing, skipping."$RESTORE
+    fi
 done
 
 echo
@@ -21,8 +27,14 @@ if [ -d $dotfilesDirectory/config ]; then
     files=`ls -1 $dotfilesDirectory/config`
 
     for file in $files; do
-        echo -e $yellow"Creating symlink for ~/.config/$file"$RESTORE
-        ln -s $dotfilesDirectory/config/$file ~/.config/$file
+        SOURCE=$dotfilesDirectory/config/$file
+        DESTINATION=~/.config/$file
+        if [ ! -L ${DESTINATION} ]; then
+            echo -e $yellow"Creating symlink for ~/.config/$file"$RESTORE
+            ln -s ${SOURCE} ${DESTINATION}
+        else
+            echo -e $yellow"Creating symlink for $file : already existing, skipping."$RESTORE
+        fi
     done
 fi
 
