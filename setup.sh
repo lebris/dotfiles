@@ -46,4 +46,20 @@ if [ -d $dotfilesDirectory/atom ]; then
     cp $dotfilesDirectory/atom/snippets.cson ~/.atom/snippets.cson # symlink with cygwin not supported :(
 fi
 
+
+echo -e $yellow"Installing bin utils"$RESTORE
+if [ ! -d "~/.bin" ]; then
+    mkdir -p ~/.bin
+fi
+for file in $(ls -1 $dotfilesDirectory/bin); do
+    SOURCE=$dotfilesDirectory/bin/$file
+    DESTINATION=~/.bin/$file
+    if [ ! -L ${DESTINATION} ]; then
+        echo -e $yellow"Creating symlink for $DESTINATION"$RESTORE
+        ln -s ${SOURCE} ${DESTINATION}
+    else
+        echo -e $yellow"Creating symlink for $DESTINATION : already existing, skipping."$RESTORE
+    fi
+done
+
 echo -e "\nNow you have to run 'source ~/.bashrc'"
