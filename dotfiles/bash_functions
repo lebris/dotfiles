@@ -1,8 +1,7 @@
 
 # XDEBUG from CLI
 enableXdebug() {
-    ip="172.17.3.60"
-    export XDEBUG_CONFIG="idekey=Eclipse remote_host=$ip"
+    export XDEBUG_CONFIG="remote_enable=1 remote_autostart=1"
 }
 
 disableXdebug() {
