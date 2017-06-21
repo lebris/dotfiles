@@ -43,3 +43,4 @@ alias docker-clean-containers='docker rm -fv $(docker ps -a -q -f status=exited)
 alias docker-clean-untagged-images='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
 alias docker-check-router='docker exec -ti system_router_1 cat /etc/nginx/conf.d/staging.conf | sed '\''/^\s*$/d'\'''
 alias docker-yolo='docker rm -fv $(docker ps -aq)'
+alias docker-yolo++='docker rm -fv $(docker ps -aq) && docker system prune'
