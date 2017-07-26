@@ -26,6 +26,8 @@
     'body': """
     <?php
 
+    declare(strict_types = 1);
+
     $0
     """
   '<?':
@@ -33,7 +35,19 @@
     'body': """
     <?php
 
+    declare(strict_types = 1);
+
     $0
+    """
+  'interface':
+    'prefix': 'interface'
+    'body': 'interface $0\n{\n\n}'
+  'multiline comment':
+    'prefix': '/**'
+    'body': """
+    /**
+     * $0
+     */
     """
   'namespace':
     'prefix': 'name'
@@ -81,6 +95,16 @@
 
     }
     """
+  'unit test class':
+    'prefix': 'tuclass'
+    'body': """
+    use PHPUnit\\\\Framework\\\\TestCase;
+
+    class $0 extends TestCase
+    {
+
+    }
+    """
   'extends':
     'prefix': 'extends'
     'body': 'extends $0'
@@ -93,3 +117,24 @@
     var_dump($0);
     die;
     """
+  'dump die':
+    'prefix': 'dd'
+    'body': """
+    dump($0);
+    die;
+    """
+  'foreach …':
+    'prefix': 'foreach'
+    'body': 'foreach($${1:variable} as $${2:key} ${3:=> $${4:value}}) \n{\n\t${0:# code...}\n}'
+  'if …':
+    'prefix': 'if'
+    'body': 'if(${1:condition})\n{\n\t${0}\n}\n'
+  'function …':
+    'prefix': 'fun'
+    'body': '${1:public }function ${2:FunctionName}(${3:$${4:value}${5:=\'\'}})\n{\n\t${0:# code...}\n}'
+  'anonymous function':
+    'prefix': 'f',
+    'body': 'function (${1:$${2:value}${3:=\'\'}}) {\n\t${0:# code...}\n}'
+  '$this->…':
+    'prefix': '$this'
+    'body': '$this->$0'
