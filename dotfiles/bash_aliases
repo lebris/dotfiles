@@ -43,3 +43,6 @@ alias docker-clean-untagged-images='printf "\n>>> Deleting untagged images\n\n" 
 alias docker-check-router='docker exec -ti system_router_1 cat /etc/nginx/conf.d/staging.conf | sed '\''/^\s*$/d'\'''
 alias docker-yolo='docker rm -fv $(docker ps -aq)'
 alias docker-yolo++='docker rm -fv $(docker ps -aq) && docker system prune'
+
+# Onyx projects
+alias coverage='make phpunit-coverage && google-chrome coverage/index.html'
