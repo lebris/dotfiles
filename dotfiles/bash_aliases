@@ -46,3 +46,8 @@ alias docker-yolo++='docker rm -fv $(docker ps -aq) && docker system prune'
 
 # Onyx projects
 alias coverage='make phpunit-coverage && google-chrome coverage/index.html'
+
+alias npm='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 npm'
+alias node='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 node'
+alias create-react-app='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6'
+alias crap='create-react-app'
