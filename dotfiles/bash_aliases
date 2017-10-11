@@ -54,5 +54,5 @@ alias coverage='make phpunit-coverage && google-chrome coverage/index.html'
 # JS stuffs
 alias npm='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 npm'
 alias node='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 node'
-alias create-react-app='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6'
+alias create-react-app='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 create-react-app'
 alias crap='create-react-app'

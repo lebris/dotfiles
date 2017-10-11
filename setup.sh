@@ -62,4 +62,11 @@ for file in $(ls -1 $dotfilesDirectory/bin); do
     fi
 done
 
+echo -e $yellow"Building docker images"$RESTORE
+for DIR in $(ls --directory images/*); do
+    cd ${DIR}
+    make build
+    cd -
+done
+
 echo -e "\nNow you have to run 'source ~/.bashrc'"
