@@ -56,3 +56,6 @@ alias npm='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u
 alias node='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 node'
 alias create-react-app='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 create-react-app'
 alias crap='create-react-app'
+
+# Requires vlc
+alias elevator="cvlc --no-video ~/.dotfiles/assets/music/elevator.mp3"
