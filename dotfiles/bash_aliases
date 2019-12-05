@@ -42,14 +42,14 @@ alias docker-clean-containers='docker rm -fv $(docker ps -a -q -f status=exited)
 alias docker-clean-untagged-images='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
 alias docker-check-router='docker exec -ti system_router_1 cat /etc/nginx/conf.d/staging.conf | sed '\''/^\s*$/d'\'''
 alias docker-yolo='docker rm -fv $(docker ps -aq)'
-alias docker-yolo++='docker rm -fv $(docker ps -aq) && docker system prune'
 alias ctop='docker run --rm -ti \
                        --name=ctop \
                        -v /var/run/docker.sock:/var/run/docker.sock \
                        quay.io/vektorlab/ctop:latest'
+alias docker-yolo++='docker rm -fv $(docker ps -aq) ; docker system prune ; docker volume prune'
 
 # Onyx projects
-alias coverage='make phpunit-coverage && google-chrome coverage/index.html'
+alias coverage='make coverage && sensible-browser coverage/index.html'
 
 # JS stuffs
 alias npm='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 npm'
@@ -59,3 +59,12 @@ alias crap='create-react-app'
 
 # Requires vlc
 alias elevator="cvlc --no-video ~/.dotfiles/assets/music/elevator.mp3"
+#alias npm='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 npm'
+#alias node='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6 node'
+alias create-react-app='docker run --rm -ti -v $(pwd):/var/www/app -w /var/www/app -u $(id -u):$(id -g) lebris/node:8.6'
+alias crap='create-react-app'
+
+alias dive='docker run --rm -it \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+            -v $(which docker):/bin/docker \
+                wagoodman/dive:latest'

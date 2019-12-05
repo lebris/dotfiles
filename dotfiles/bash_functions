@@ -1,3 +1,20 @@
+naoclone() {
+    if [ \( $# -eq 0 \) -o \( "$1" == "--help" \) ]; then
+        echo 'no repository name, exiting.';
+		echo "Usage:"
+		echo -e "\tnaoclone REPOSITORY [DESTINATION]";
+        return;
+    fi
+
+    local REPOSITORY=$1
+    local TARGET=""
+    if [ $# -eq 2 ]; then
+	    TARGET="$2"
+    fi
+
+    git clone git@github.com:naoned/$REPOSITORY.git $TARGET
+}
+
 
 # XDEBUG from CLI
 enableXdebug() {
