@@ -20,14 +20,12 @@ alias gp='git pull --rebase'
 alias vi='vim'
 alias wl='php console worker:list'
 alias wr='php console worker:run'
-alias devel='ssh devel-v3-web21'
 
 # usefull vars
 export projects_dir=~/Documents/projects
 export documents_dir=~/Documents
 export eclipse_dir=~/App/eclipse-neon
 export workspace=~/workspace
-export develServer="devel-v3-web21"
 
 # grep matches colorization
 alias grep=' grep --color'
