@@ -44,7 +44,7 @@ alias ctop='docker run --rm -ti \
                        --name=ctop \
                        -v /var/run/docker.sock:/var/run/docker.sock \
                        quay.io/vektorlab/ctop:latest'
-alias docker-yolo++='docker rm -fv $(docker ps -aq) ; docker system prune ; docker volume prune'
+alias docker-yolo++='docker rm -fv $(docker ps -aq) ; yes | docker system prune ; yes | docker volume prune'
 
 # Onyx projects
 alias coverage='make coverage && sensible-browser coverage/index.html'
