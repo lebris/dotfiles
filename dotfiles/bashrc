@@ -136,3 +136,6 @@ if [ -f ~/.bash_extra ]; then
     . ~/.bash_extra
 fi
 
+if [ -f ~/.bash_aliases_mnessh ]; then
+    . ~/.bash_aliases_mnessh
+fi

@@ -16,6 +16,10 @@ alias 4="cd ../../../.."
 alias 5="cd ../../../../.."
 alias 6="cd ../../../../../.."
 
+alias gtw="echo cd ~/workspace;cd ~/workspace"
+alias gte="echo cd ~/workspace/naoned-expo;cd ~/workspace/naoned-expo"
+alias gtm="echo cd ~/workspace/naoned-memo;cd ~/workspace/naoned-memo"
+
 alias gp='git pull --rebase'
 alias vi='vim'
 alias wl='php console worker:list'
