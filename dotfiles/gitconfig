@@ -19,6 +19,7 @@
     l = "! git lg -n 10"
     wip = "! git add . && git commit -m '[ci skip] wip'"
     pouce = push
+    oups = commit --amend --no-edit
 [push]
     default = current
 [color]
