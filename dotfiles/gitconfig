@@ -21,6 +21,8 @@
     pouce = push
     oups = commit --amend --no-edit
     lease-forced-push = push --force-with-lease
+    pousse = push
+    pouce = "! echo 👍️"
 [push]
     default = current
 [color]
