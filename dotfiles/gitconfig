@@ -20,6 +20,7 @@
     wip = "! git add . && git commit -m '[ci skip] wip'"
     pouce = push
     oups = commit --amend --no-edit
+    lease-forced-push = push --force-with-lease
 [push]
     default = current
 [color]
