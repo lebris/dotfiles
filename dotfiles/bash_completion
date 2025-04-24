@@ -1,7 +1,7 @@
 _dex() {
-    source /usr/share/bash-completion/completions/docker
     local cur="${COMP_WORDS[COMP_CWORD]}"
-    __docker_complete_containers_running
+    local containers=$(docker ps --format '{{.Names}}')
+    COMPREPLY=( $(compgen -W "$containers" -- "$cur") )
 }
 
 complete -F _dex dex
