@@ -17,6 +17,7 @@
     rank = shortlog -sn --no-merges
     bdm = "!git branch --merged | grep -v '*' | grep -v 'master' | xargs -n 1 git branch -d"
     l = "! git lg -n 20"
+    lbranch = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     wip = "! git add . && git commit -m '[ci skip] wip'"
     pouce = push
     oups = commit --amend --no-edit
