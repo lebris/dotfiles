@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfilesDirectory=~/.dotfiles
+dotfilesDirectory="$(pwd)"
 
 RESTORE='\e[0m'
 yellow='\e[00;33m'

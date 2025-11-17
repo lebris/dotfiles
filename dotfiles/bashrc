@@ -139,3 +139,6 @@ fi
 if [ -f ~/.bash_aliases_mnessh ]; then
     . ~/.bash_aliases_mnessh
 fi
+
+# for monogame needs
+export MGFXC_WINE_PATH=~/.winemonogame/
