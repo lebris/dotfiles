@@ -1,3 +1,6 @@
+# activation de fzf
+[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
+
 naoclone() {
     if [ \( $# -eq 0 \) -o \( "$1" == "--help" \) ]; then
         echo 'no repository name, exiting.';
