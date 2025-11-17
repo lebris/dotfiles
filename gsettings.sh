@@ -11,10 +11,10 @@ gsettings set org.gnome.shell.window-switcher current-workspace-only false
 # ----------------------------------------------------
 
 echo 'Configure Volume down : <Super> + <Shift> + <->'
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down '<Shift><Super>KP_Subtract'
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Shift><Super>KP_Subtract']"
 
 echo 'Configure Volume down : <Super> + <Shift> + <+>'
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up '<Shift><Super>KP_Add'
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "['<Shift><Super>KP_Add']"
 
 echo 'Configure Play/pause : <Super> + <Shift> + <Pause>'
-gsettings set org.gnome.settings-daemon.plugins.media-keys play '<Shift><Super>Pause'
+gsettings set org.gnome.settings-daemon.plugins.media-keys play "['<Shift><Super>Pause']"
