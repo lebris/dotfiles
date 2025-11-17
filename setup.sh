@@ -38,4 +38,6 @@ if [ -d $dotfilesDirectory/config ]; then
     done
 fi
 
+./gsettings.sh
+
 echo -e "\nNow you have to run 'source ~/.bashrc'"
