@@ -125,12 +125,26 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+powerlineSaMere() {
+  if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+    if [ "$TERM" == "xterm-ghostty" ]; then
+       if [ "$(ghostty --version | head -1)" == "Ghostty 1.3.1" ]; then
+           echo "Note : powerline is disabled on Ghostty != 1.3.2 (see https://github.com/ghostty-org/ghostty/discussions/11245#discussioncomment-16190443)"
+           echo "Your running $(ghostty --version|head -1)"
+           return;
+       fi
+       echo "Congratulation Ghostty has been updated somehow."
+       echo "powerline is now enabled."
+       echo "Edit ~/.bashrc and remove the bullshity checking hostty version."
+    fi
+
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
     source /usr/share/powerline/bindings/bash/powerline.sh
-fi
+  fi
+}
+powerlineSaMere
 
 if [ -f ~/.bash_extra ]; then
     . ~/.bash_extra
