@@ -119,7 +119,10 @@ set hidden
 set directory=~/.vim/tmp
 
 " powerline configuration
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+let s:powerline_path = glob('$HOME/.local/lib/python*/site-packages/powerline/bindings/vim/')
+if !empty(s:powerline_path)
+  let &rtp .= ',' . s:powerline_path
+endif
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
 set laststatus=2
