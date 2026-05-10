@@ -3,7 +3,8 @@
 dotfilesDirectory="$(pwd)"
 
 RESTORE='\e[0m'
-yellow='\e[00;33m'
+green='\e[00;32m'
+gray='\e[00;90m'
 
 do_dotfiles=false
 do_config=false
@@ -25,34 +26,39 @@ else
 fi
 
 if $do_dotfiles; then
+    echo -e "\n── Dotfiles ──"
     files=$(ls -1 "$dotfilesDirectory/dotfiles")
     for file in $files; do
         SOURCE="$dotfilesDirectory/dotfiles/$file"
-        DESTINATION=~/."$file"
-        if [ ! -L "${DESTINATION}" ]; then
-            echo -e "${yellow}Creating symlink for $file${RESTORE}"
-            ln -sf "${SOURCE}" "${DESTINATION}"
+        DESTINATION="~/.$file"
+        ABSOLUTE_DESTINATION="$HOME/.$file"
+        if [ ! -L "${ABSOLUTE_DESTINATION}" ]; then
+            echo -e "${green}✓ ${DESTINATION} : installed${RESTORE}"
+            ln -sf "${SOURCE}" "${ABSOLUTE_DESTINATION}"
         else
-            echo -e "${yellow}Creating symlink for $file : already existing, skipping.${RESTORE}"
+            echo -e "${gray}~ ${DESTINATION} : up to date${RESTORE}"
         fi
     done
 fi
 
 if $do_config && [ -d "$dotfilesDirectory/config" ]; then
+    echo -e "\n── Config ──"
     files=$(ls -1 "$dotfilesDirectory/config")
     for file in $files; do
         SOURCE="$dotfilesDirectory/config/$file"
-        DESTINATION=~/.config/"$file"
-        if [ ! -L "${DESTINATION}" ]; then
-            echo -e "${yellow}Creating symlink for ~/.config/$file${RESTORE}"
-            ln -s "${SOURCE}" "${DESTINATION}"
+        DESTINATION="~/.config/$file"
+        ABSOLUTE_DESTINATION="$HOME/.config/$file"
+        if [ ! -L "${ABSOLUTE_DESTINATION}" ]; then
+            echo -e "${green}✓ ${DESTINATION} : installed${RESTORE}"
+            ln -s "${SOURCE}" "${ABSOLUTE_DESTINATION}"
         else
-            echo -e "${yellow}Creating symlink for $file : already existing, skipping.${RESTORE}"
+            echo -e "${gray}~ ${DESTINATION} : up to date${RESTORE}"
         fi
     done
 fi
 
 if $do_gsettings; then
+    echo -e "\n── Gsettings ──"
     ./gsettings.sh
 fi
 
