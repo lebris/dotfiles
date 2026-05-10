@@ -1,0 +1,30 @@
+#background-opacity = 0.97
+
+# -----------------------------
+# Tab
+# -----------------------------
+keybind = ctrl+page_down=next_tab
+keybind = ctrl+page_up=previous_tab
+
+# -----------------------------
+# Splits
+# -----------------------------
+
+# Split creation
+keybind = ctrl+²>arrow_down=new_split:down
+keybind = ctrl+²>arrow_up=new_split:up
+keybind = ctrl+²>arrow_right=new_split:right
+keybind = ctrl+²>arrow_left=new_split:left
+
+# Split zoom
+keybind = ctrl+²>z=toggle_split_zoom
+
+# Split navigation
+keybind = ctrl+shift+arrow_down=goto_split:down
+keybind = ctrl+shift+arrow_up=goto_split:up
+keybind = ctrl+shift+arrow_right=goto_split:right
+keybind = ctrl+shift+arrow_left=goto_split:left
+
+# Disable font ligatures
+font-feature = -calt
+
