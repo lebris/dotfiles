@@ -6,7 +6,7 @@ apt-get update && apt-get install -y git make powerline fonts-powerline powerlin
 
 $ git clone git@github.com:lebris/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
-$ ./setup.sh
+$ ./setup.sh --all
 ```
 
 

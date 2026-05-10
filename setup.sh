@@ -12,13 +12,29 @@ do_config=false
 do_gsettings=false
 dry_run=false
 
+usage() {
+    echo "Usage: $0 [OPTIONS]"
+    echo ""
+    echo "By default everthing is installed."
+    echo ""
+    echo "Options:"
+    echo "  --all        Install all sections."
+    echo "  --dotfiles   Install dotfiles symlinks (~/.*)."
+    echo "  --config     Install config symlinks (~/.config/*)."
+    echo "  --gsettings  Apply gsettings."
+    echo "  --dry-run    Simulate without applying any changes."
+    echo "  -h, --help   Show this help message."
+}
+
 for arg in "$@"; do
     case "$arg" in
         --dotfiles)  do_dotfiles=true ;;
         --config)    do_config=true ;;
         --gsettings) do_gsettings=true ;;
+        --all)       do_dotfiles=true; do_config=true; do_gsettings=true ;;
         --dry-run)   dry_run=true ;;
-        *) echo "Unknown option: $arg"; exit 1 ;;
+        --help|-h)   usage; exit 0 ;;
+        *) echo "Unknown option: $arg"; echo ""; usage; exit 1 ;;
     esac
 done
 
