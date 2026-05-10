@@ -17,12 +17,6 @@ for file in $files; do
     fi
 done
 
-#echo
-#if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-#    echo "Installing vim's plugin manager Vundle"
-#    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#fi
-
 if [ -d $dotfilesDirectory/config ]; then
     files=`ls -1 $dotfilesDirectory/config`
 
